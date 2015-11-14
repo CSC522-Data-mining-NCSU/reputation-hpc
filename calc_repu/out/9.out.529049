@@ -1,0 +1,49 @@
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@n2l6-3.hpc.ncsu.edu>
+Subject: Job 529049: <mpiexec -n 4 /share/jchen37/miniconda/bin/python2.7 te.py run 9> Done
+
+Job <mpiexec -n 4 /share/jchen37/miniconda/bin/python2.7 te.py run 9> was submitted from host <login02.hpc.ncsu.edu> by user <jchen37> in cluster <henry2>.
+Job was executed on host(s) <3*n2l6-3>, in queue <single_chassis>, as user <jchen37> in cluster <henry2>.
+                            <1*n2l6-8>
+</home/jchen37> was used as the home directory.
+</share/jchen37/netflix/calc_repu> was used as the working directory.
+Started at Sat Nov 14 16:48:57 2015
+Results reported at Sat Nov 14 16:49:56 2015
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+mpiexec -n 4 /share/jchen37/miniconda/bin/python2.7 te.py run 9
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    201.77 sec.
+    Max Memory :       121 MB
+    Max Swap   :       851 MB
+
+    Max Processes  :         9
+    Max Threads    :        10
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <./err/9.err.529049> for stderr output of this job.
+

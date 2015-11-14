@@ -7,7 +7,7 @@ class WeightFinder(object):
 
 	def get_user_weight(self, user_id):
 		left = 0
-		right = self.N-1
+		right = self.N
 		while left <= right:
 			mid = (left+right)/2
 			i = int(self.lines[mid].split(',')[0])
@@ -18,5 +18,5 @@ class WeightFinder(object):
 
 """
 finder = WeightFinder()
-print finder.get_user_weight(1488844)
+print finder.get_user_weight(2649429)
 """
