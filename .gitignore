@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 /training_set
+*.csv
 
 # C extensions
 *.so
