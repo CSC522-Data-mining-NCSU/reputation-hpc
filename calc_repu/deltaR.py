@@ -17,12 +17,12 @@ def run(q):
 	urf = '../userRates/'+str(q)+'.csv'
 	totalline = 0
 	with open(urf,'rb') as ur:
-		urr = csv.reader(ur)
+		ur.next()
 		totalline = sum(1 for x in ur)
 
 	start = [0]*processors
 	with open(urf,'rb') as ur:
-		urr = csv.reader(ur)	
+		urr = csv.reader(ur)
 		urr.next()
 		l = [int(float(x)/processors*totalline) for x in range(processors)]
 		for i,line in enumerate(urr):
@@ -35,22 +35,22 @@ def run(q):
 		urr = csv.reader(ur)
 		urr.next()
 		lastu = 0
-		count = 0	
+		count = 0
 		#weight = 0
 		leniency = 0
 		for line in urr:
 			u = int(line[0])
 			if u < start[rank]: continue
 			if rank < processors - 1:
-				if u >= start[rank+1]: break
+				if u > start[rank+1]: break
 			if u != lastu:
 				if lastu != 0: #recording the results for lastu
 					#weight = weight/count
 					leniency = leniency/count
 					if leniency < -1 :leniency = -1
 					if leniency > 1: leniency = 1
-					ww[str(lastu)] = 1-abs(leniency)
-					ll[str(lastu)] = leniency
+					ww[lastu] = 1-abs(leniency)
+					ll[lastu] = leniency
 					print lastu
 					#if abs(leniency) > 0.8: print lastu,leniency
 				lastu = u
@@ -63,7 +63,13 @@ def run(q):
 			count += 1
 			#weight = (g-G)**2
 			leniency += (g-G)/g
-			
+		
+		leniency = leniency/count
+		if leniency < -1: leniency = -1
+		if leniency > 1 : leniency = 1
+		ww[lastu] = 1-abs(leniency)
+		ll[lastu] = leniency
+	
 	if rank == 0:
 		for i in range(1,processors):
 			temp = comm.recv(source=i)
