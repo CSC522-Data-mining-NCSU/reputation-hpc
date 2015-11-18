@@ -27,7 +27,6 @@ def get_movie_grade(movie_id):
 	#ground = pickle.load(open('movie_ground'))
 	#ground[movie_id] = score/sum_w
 	#pickle.dump(ground,open('movie_ground','w'))
-	#print movie_id
 	f.close()
 	return score/sum_w
 
@@ -56,3 +55,4 @@ def run(q):
 
 if __name__ == '__main__':
 	eval(cmd())
+	#run(7)

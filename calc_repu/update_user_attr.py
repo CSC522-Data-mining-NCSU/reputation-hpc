@@ -19,7 +19,6 @@ w=sorted(w)
 
 with open('user_attr.csv','wb') as out:
 	out.write('id'+',weight'+',leniency\n')
-	qq = 0
 	for x in w:
 		out.write(str(x))
 		out.write(',')
@@ -27,5 +26,3 @@ with open('user_attr.csv','wb') as out:
 		out.write(',')
 		out.write(str(all_len[x]))
 		out.write('\n')
-		if qq > 10: break
-		qq += 1

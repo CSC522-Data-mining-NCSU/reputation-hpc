@@ -1,3 +1,5 @@
+import pdb
+
 class WeightFinder(object):
 	def __init__(self):
 		f = open('user_attr.csv')
@@ -14,9 +16,10 @@ class WeightFinder(object):
 			if i == user_id: return mid, float(self.lines[mid].split(',')[1])
 			if i < user_id: left = mid
 			else: right = mid
-		return None
+			if right - left <= 1: return -1,0
+		return -1,0
 
 """
 finder = WeightFinder()
-print finder.get_user_weight(2649429)
+print finder.get_user_weight(100000)
 """
