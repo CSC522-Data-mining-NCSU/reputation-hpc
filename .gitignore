@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 /training_set
 /userRates
+/out
+/err
 *.csv
 
 # C extensions
